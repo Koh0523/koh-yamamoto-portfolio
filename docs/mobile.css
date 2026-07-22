@@ -1,0 +1,6 @@
+@media (max-width: 820px) {
+  .hero-image-wrap {
+    height: 340px;
+    min-height: 0;
+  }
+}
