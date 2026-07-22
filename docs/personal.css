@@ -67,6 +67,97 @@
   margin-bottom: 0;
 }
 
+.career-highlights {
+  border-top: 1px solid var(--line);
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 96px 28px;
+}
+
+.career-heading {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-top: 20px;
+}
+
+.career-heading > p {
+  color: var(--muted);
+  font-size: 17px;
+  margin: 0;
+  max-width: 530px;
+}
+
+.career-list {
+  border-top: 1px solid var(--line);
+  list-style: none;
+  margin: 52px 0 0;
+  padding: 0;
+}
+
+.career-item {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 120px minmax(0, 1.25fr) minmax(240px, 0.75fr);
+  padding: 34px 0 38px;
+}
+
+.career-period,
+.career-company {
+  color: var(--teal);
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin: 0;
+}
+
+.career-company {
+  margin-bottom: 10px;
+}
+
+.career-item h3 {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.career-detail {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.career-metrics {
+  align-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.career-metrics p {
+  margin: 0;
+}
+
+.career-metrics strong {
+  display: block;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.career-metrics span {
+  color: var(--muted);
+  display: block;
+  font-size: 11px;
+  line-height: 1.55;
+  margin-top: 5px;
+}
+
 @media (max-width: 820px) {
   .personal-hero {
     align-items: stretch;
@@ -101,5 +192,32 @@
   .story-grid {
     gap: 34px;
     grid-template-columns: 1fr;
+  }
+
+  .career-highlights {
+    padding: 64px 18px;
+  }
+
+  .career-heading {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .career-list {
+    margin-top: 34px;
+  }
+
+  .career-item {
+    gap: 16px;
+    grid-template-columns: 1fr;
+    padding: 28px 0 32px;
+  }
+
+  .career-item h3 {
+    font-size: 22px;
+  }
+
+  .career-metrics {
+    gap: 18px;
   }
 }
