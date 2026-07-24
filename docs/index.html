@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mobile.css" />
     <link rel="stylesheet" href="personal.css" />
+    <link rel="stylesheet" href="tabs.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <main>
@@ -86,23 +88,29 @@
       </section>
 
       <section class="work-section" id="work" aria-labelledby="work-title">
-        <div class="work-heading"><div class="section-kicker">04 / SELECTED WORK</div><h2 id="work-title">課題を、運用できる形へ。</h2><p>SalesOps、DataOps、AI / Enablement、Salesの4領域から、守秘義務に配慮して記載しています。</p></div>
+        <div class="work-heading"><div class="section-kicker">04 / SELECTED WORK</div><h2 id="work-title">課題を、運用できる形へ。</h2><p>SalesOps、DataOps、AI / Enablementの3領域から、守秘義務に配慮して記載しています。</p></div>
         <div class="projects">
-          <section class="theme-block" aria-labelledby="salesops-title">
+          <div class="theme-tabs" role="tablist" aria-label="専門領域">
+            <button class="theme-tab" id="tab-salesops" type="button" role="tab" aria-selected="true" aria-controls="panel-salesops">SalesOps</button>
+            <button class="theme-tab" id="tab-dataops" type="button" role="tab" aria-selected="false" aria-controls="panel-dataops" tabindex="-1">DataOps</button>
+            <button class="theme-tab" id="tab-ai" type="button" role="tab" aria-selected="false" aria-controls="panel-ai" tabindex="-1">AI / Enablement</button>
+          </div>
+          <div class="theme-panels">
+          <section class="theme-block" id="panel-salesops" role="tabpanel" aria-labelledby="tab-salesops">
             <div class="theme-heading"><p class="theme-number">01</p><div><p class="theme-label">SALES OPERATIONS</p><h3 id="salesops-title">営業組織の判断と実行を、<br />仕組みにする。</h3><p>営業プロセス、管理指標、Salesforce、レビュー運用をつなぎ、再現性のある営業組織をつくる。</p></div></div>
             <div class="theme-projects">
               <article class="project"><div class="project-index">01</div><div class="project-main"><p class="project-label">FORECAST / OPERATING MODEL</p><h3>MEDDPICCとForecastを、営業管理の共通言語にする</h3><p class="project-summary">ForecastとMEDDPICCを、入力を増やすための仕組みではなく、営業管理の判断基準を揃えるための共通言語として導入・運用した。</p><div class="fact-row"><span>FS 約100名</span><span>約1,000 商談 / 月</span><span>Forecast 運用中</span></div></div><div class="project-system"><p class="system-label">OPERATING DESIGN</p><ol><li><span>01</span>商談進捗を可視化</li><li><span>02</span>相関を比較</li><li><span>03</span>定義差を特定</li><li><span>04</span>レビューへ反映</li></ol><p class="project-note">マネージャーごとのSales StageとMEDDPICC進捗の関係を分析し、ステージ更新基準の差異を可視化。</p></div></article>
               <article class="project"><div class="project-index">02</div><div class="project-main"><p class="project-label">SALESFORCE / OPERATING DESIGN</p><h3>Salesforceを、営業判断と業務実行の基盤へ拡張する</h3><p class="project-summary">顧客情報の補完、グループ企業単位での集計、営業担当への割当、営業管理指標の設計までを一連の業務プロセスとして設計・実装した。</p><div class="fact-row"><span>Apex</span><span>Custom Metadata</span><span>API / LLM</span></div></div><div class="project-system"><p class="system-label">OPERATING DESIGN</p><ol><li><span>01</span>顧客情報を補完</li><li><span>02</span>企業単位で集計</li><li><span>03</span>担当者へ割当</li><li><span>04</span>営業判断へ接続</li></ol><p class="project-note">Salesforceを入力・分析のためだけに置かず、顧客情報、判断ルール、現場の次の行動をつなぐ業務基盤として設計。</p></div></article>
             </div>
           </section>
-          <section class="theme-block" aria-labelledby="dataops-title">
+          <section class="theme-block" id="panel-dataops" role="tabpanel" aria-labelledby="tab-dataops" hidden>
             <div class="theme-heading"><p class="theme-number">02</p><div><p class="theme-label">DATA OPERATIONS</p><h3 id="dataops-title">判断できるデータを、<br />使い続けられる状態にする。</h3><p>モデル、ダッシュボード、DWH、データ定義をつなぎ、分析を現場の意思決定へ変える。</p></div></div>
             <div class="theme-projects">
               <article class="project"><div class="project-index">03</div><div class="project-main"><p class="project-label">ML / SALES DECISION</p><h3>アポMLを、初回商談の担当判断へつなぐ</h3><p class="project-summary">SAL（ISがアポを獲得）時点の情報から、受注可能性とSQL（有効商談）昇格期待値を予測。期待値に応じて、ISとFSのどちらが初回商談を担うかを分ける運用を設計した。</p><div class="fact-row"><span>117,890 商談</span><span>16 入力項目</span><span>OOS AUC 0.742</span></div></div><div class="project-system"><p class="system-label">DATA TO OPERATION</p><ol><li><span>01</span>walk-forward 検証</li><li><span>02</span>線形モデルへ蒸留</li><li><span>03</span>Salesforceで採点</li><li><span>04</span>初回商談を分岐</li></ol><p class="project-note">期待値が低いアポはISが初回商談を担い、SQL（有効商談）に上がる場合のみFSへ。期待値が高いアポはFSがそのまま初回商談を行い、FSの生産性向上を狙う。</p></div></article>
               <article class="project"><div class="project-index">04</div><div class="project-main"><p class="project-label">DWH / BI / DATA GOVERNANCE</p><h3>AI活用にも耐える、共通データセットと分析環境を整える</h3><p class="project-summary">部門ごとに分散していた帳票・指標定義を共通化し、BigQuery上の検証済みデータセットとGitHubで管理する分析・検証環境を整備した。</p><div class="fact-row"><span>BigQuery</span><span>dbt / BI</span><span>GitHub</span></div></div><div class="project-system"><p class="system-label">DATA FOUNDATION</p><ol><li><span>01</span>指標・粒度を定義</li><li><span>02</span>データセットを検証</li><li><span>03</span>ダッシュボードで共有</li><li><span>04</span>AI活用へ接続</li></ol><p class="project-note">AIが扱う前提データを都度確認する負荷を下げ、利用者が信頼できるデータから分析を始められる構造を設計。</p></div></article>
             </div>
           </section>
-          <section class="theme-block" aria-labelledby="ai-title">
+          <section class="theme-block" id="panel-ai" role="tabpanel" aria-labelledby="tab-ai" hidden>
             <div class="theme-heading"><p class="theme-number">03</p><div><p class="theme-label">AI / ENABLEMENT</p><h3 id="ai-title">会話データとAIを、<br />現場の育成と判断へ。</h3><p>AIを導入するだけでなく、利用者、認証、レビュー、業務フローまで含めて使われる状態をつくる。</p></div></div>
             <div class="theme-projects">
               <article class="project"><div class="project-index">05</div><div class="project-main"><p class="project-label">AI ADOPTION / ENABLEMENT</p><h3>AI商談要約を、部門ごとの業務へ合わせる</h3><p class="project-summary">Zoomの文字起こしを取得し、要約・構造化してSalesforceへ連携するPoCを構築。AIを入れることではなく、誰が何を判断し、どのデータを残すかを先に決めた。</p><div class="fact-row"><span>FS 約100名</span><span>Zoom API</span><span>LLM / Salesforce</span></div></div><div class="project-system"><p class="system-label">OPERATING DESIGN</p><ol><li><span>01</span>文字起こし取得</li><li><span>02</span>前処理</li><li><span>03</span>要約・構造化</li><li><span>04</span>Salesforce連携</li></ol><p class="project-note">FSでは外部サービスを選択。CSではそのサービスが不適合だったため、設計した内製アーキテクチャを流用。</p></div></article>
@@ -110,18 +118,13 @@
               <article class="project"><div class="project-index">07</div><div class="project-main"><p class="project-label">AI OPERATIONS / MCP</p><h3>認証された利用環境から、BIをLLMで扱えるようにする</h3><p class="project-summary">Googleアカウントで利用者を認証しつつ、通常アカウントを必要とするBIの操作・編集をClaudeから扱えるように、MCPを企画から実装まで担った。</p><div class="fact-row"><span>Claude</span><span>BI / MCP</span><span>Google Login</span></div></div><div class="project-system"><p class="system-label">OPERATING DESIGN</p><ol><li><span>01</span>利用者を認証</li><li><span>02</span>BIとMCPを接続</li><li><span>03</span>Claudeから操作</li><li><span>04</span>利用環境を運用</li></ol><p class="project-note">BigQuery上の検証済みデータセットとGitHubで管理する分析・検証環境も整備し、信頼できるデータを起点にAI活用できる構造を設計した。</p></div></article>
             </div>
           </section>
-          <section class="theme-block" aria-labelledby="sales-title">
-            <div class="theme-heading"><p class="theme-number">04</p><div><p class="theme-label">SALES</p><h3 id="sales-title">顧客対話の手前から、<br />次の商談をつくる。</h3><p>営業・事業立ち上げの経験を、リードの受け渡し、商談化、獲得オペレーションの改善へ生かす。</p></div></div>
-            <div class="theme-projects">
-              <article class="project"><div class="project-index">08</div><div class="project-main"><p class="project-label">MAL / MQL / SAL PROCESS</p><h3>初回商談の担当を最適化し、SALからSQLへの転換を高める</h3><p class="project-summary">従来は、MALからMQL（マーケティングからISへ）、SAL（ISがアポを獲得）を経て、FSが初回商談を行うプロセスだった。SAL時点のSQL（有効商談）昇格期待値を用いて、初回商談を担うチームを分ける運用へ変更した。</p><div class="fact-row"><span>MAL → MQL</span><span>SAL</span><span>SQL（有効商談）</span></div></div><div class="project-system"><p class="system-label">PROCESS DESIGN</p><ol><li><span>01</span>マーケからISへ引継ぎ</li><li><span>02</span>ISがアポを獲得</li><li><span>03</span>期待値で初回商談を分岐</li><li><span>04</span>SQL化したものをFSへ</li></ol><p class="project-note">期待値が低いアポはISが初回商談を担い、SQL（有効商談）に上がる場合のみFSへ引き渡す。期待値が高いアポはFSがそのまま初回商談を行う。</p></div></article>
-            </div>
-          </section>
+          </div>
         </div>
       </section>
 
       <section class="foundation" aria-labelledby="foundation-title"><div class="section-kicker">05 / OPERATING PHILOSOPHY</div><div class="foundation-grid"><h2 id="foundation-title">AIの前に、<br />信頼できる前提をつくる。</h2><div class="foundation-stack"><div class="foundation-card"><span>01</span><strong>Shared definition</strong><p>指標・粒度・責任範囲を揃える</p></div><div class="foundation-card"><span>02</span><strong>Trusted dataset</strong><p>検証済みのデータを扱える状態にする</p></div><div class="foundation-card accent"><span>03</span><strong>Human + AI workflow</strong><p>人の判断とAIの処理を、運用の中で分担する</p></div></div></div></section>
 
-      <section class="background" id="background" aria-labelledby="background-title"><div class="section-kicker">06 / CURRENT FOCUS</div><div class="background-grid"><h2 id="background-title">現場から、<br />事業の仕組みへ。</h2><div><p class="background-copy">新規営業、営業組織立ち上げ、事業運営を経て、現在はSaaS事業会社でSalesOps / DataOpsを推進しています。営業、IS、FS、CS、マーケティング、経営企画の間にある摩擦を、業務とデータの両面から解くことを専門にしています。</p><div class="skill-groups"><div><p>SALES OPS</p><span>Forecast / MEDDPICC / BPR / Salesforce設計</span></div><div><p>DATA OPS</p><span>ML / BigQuery / dbt / BI / データ構造設計</span></div><div><p>AI / ENABLEMENT</p><span>LLM / MCP / 会話データ活用 / ディールレビュー</span></div><div><p>SALES</p><span>MQL / SALプロセス / 営業組織立ち上げ</span></div></div></div></div></section>
+      <section class="background" id="background" aria-labelledby="background-title"><div class="section-kicker">06 / CURRENT FOCUS</div><div class="background-grid"><h2 id="background-title">現場から、<br />事業の仕組みへ。</h2><div><p class="background-copy">新規営業、営業組織立ち上げ、事業運営を経て、現在はSaaS事業会社でSalesOps / DataOpsを推進しています。営業、IS、FS、CS、マーケティング、経営企画の間にある摩擦を、業務とデータの両面から解くことを専門にしています。</p><div class="skill-groups"><div><p>SALES OPS</p><span>Forecast / MEDDPICC / BPR / Salesforce設計</span></div><div><p>DATA OPS</p><span>ML / BigQuery / dbt / BI / データ構造設計</span></div><div><p>AI / ENABLEMENT</p><span>LLM / MCP / 会話データ活用 / ディールレビュー</span></div></div></div></div></section>
       <footer><p>YAMAMOTO KOH</p><p>Business Operations, Data Systems &amp; AI Adoption</p></footer>
     </main>
   </body>
