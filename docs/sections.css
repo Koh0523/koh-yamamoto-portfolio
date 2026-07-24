@@ -1,0 +1,133 @@
+.work-section {
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+}
+
+.work-heading {
+  background: var(--ink);
+  color: #f4f5f1;
+  margin: 0;
+  padding: 96px max(28px, calc((100vw - var(--max)) / 2 + 28px)) 54px;
+}
+
+.projects {
+  border-top: 0;
+  display: block;
+}
+
+.theme-block {
+  border-top: 0;
+  padding: 76px max(28px, calc((100vw - var(--max)) / 2 + 28px)) 90px;
+}
+
+.theme-heading,
+.theme-projects {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max);
+}
+
+.theme-heading {
+  align-items: start;
+  grid-template-columns: 150px minmax(0, 1fr);
+  margin-bottom: 34px;
+  max-width: 1320px;
+}
+
+.theme-number {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.theme-heading h3 {
+  font-size: 36px;
+}
+
+.theme-salesops {
+  background: var(--ink);
+  color: #f4f5f1;
+}
+
+.theme-dataops {
+  background: var(--paper-deep);
+  color: var(--ink);
+}
+
+.theme-ai {
+  background: var(--teal);
+  color: #f4f5f1;
+}
+
+.theme-dataops .theme-label,
+.theme-dataops .project-label,
+.theme-dataops .system-label {
+  color: var(--teal);
+}
+
+.theme-dataops .theme-heading div > p:last-child,
+.theme-dataops .project-summary,
+.theme-dataops .project-note {
+  color: var(--muted);
+}
+
+.theme-dataops .theme-projects,
+.theme-dataops .project,
+.theme-dataops .project-system {
+  border-color: var(--line);
+}
+
+.theme-dataops .fact-row span {
+  border-color: #94a19a;
+  color: var(--ink);
+}
+
+.theme-dataops .project-system li {
+  color: var(--ink);
+}
+
+.theme-ai .theme-label,
+.theme-ai .project-label,
+.theme-ai .system-label,
+.theme-ai .theme-heading div > p:last-child,
+.theme-ai .project-summary,
+.theme-ai .project-note,
+.theme-ai .project-system li {
+  color: #e5efeb;
+}
+
+.theme-ai .theme-projects,
+.theme-ai .project,
+.theme-ai .project-system {
+  border-color: #8eaea8;
+}
+
+.theme-ai .fact-row span {
+  border-color: #b7ccc7;
+  color: #f4f5f1;
+}
+
+@media (max-width: 820px) {
+  .work-heading {
+    padding: 64px 18px 36px;
+  }
+
+  .theme-block {
+    padding: 58px 18px 68px;
+  }
+
+  .theme-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-number {
+    font-size: 30px;
+  }
+
+  .theme-heading h3 {
+    font-size: 30px;
+  }
+}
